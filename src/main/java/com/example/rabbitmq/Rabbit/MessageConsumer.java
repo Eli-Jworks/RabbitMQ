@@ -7,6 +7,7 @@ import com.example.rabbitmq.Controller.Controller;
 import com.rabbitmq.client.*;
 import org.springframework.amqp.utils.SerializationUtils;
 import org.springframework.stereotype.Component;
+import org.yaml.snakeyaml.serializer.Serializer;
 
 import java.io.IOException;
 import java.util.List;
