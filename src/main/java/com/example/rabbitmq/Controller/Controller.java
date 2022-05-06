@@ -59,33 +59,52 @@ public class Controller {
         publisher.startConnection();
         return action + " request sent!";
     }
-//
-//    @GetMapping("/course/{id}")
-//    public Course getCourseById(@PathVariable int id) {
-//        return service.findCourseById(id);
-//    }
-//
-//    @GetMapping("/course/{title}")
-//    public Course getCourseByName(@PathVariable String title) {
-//        return service.findCourseByTitle(title);
-//    }
-//
-//    @GetMapping("/getcourses")
-//    public List<Course> getAllCourses() {
-//        return service.getAllCourses();
-//    }
-//
-//    @GetMapping("/getstudents")
-//    public List<Student> getAllStudents() {
-//        return service.findAllStudents();
-//    }
-//
-//    @GetMapping("/student/{id}")
-//    public Student getStudentById(@PathVariable int id) {
-//        Student student = service.findStudentById(id);
-//        System.out.println(student);
-//        return student;
-//    }
+
+    @GetMapping("/student/{id}")
+    public String getStudentById(@PathVariable int id) throws Exception {
+        String action = "Get Student By ID";
+        MessageFilter msg = MessageFilter.builder().action(action).object(id).build();
+        MessagePublisher publisher = new MessagePublisher(msg);
+        publisher.startConnection();
+        return action + " request sent!";
+    }
+
+    @GetMapping("/course/id/{id}")
+    public String getCourseById(@PathVariable int id) throws Exception {
+        String action = "Get Course By ID";
+        MessageFilter msg = MessageFilter.builder().action(action).object(id).build();
+        MessagePublisher publisher = new MessagePublisher(msg);
+        publisher.startConnection();
+        return action + " request sent!";    }
+
+
+    @GetMapping("/getcourses")
+    public String getAllCourses() throws Exception {
+        String action = "Get All Courses";
+        MessageFilter msg = MessageFilter.builder().action(action).object(action).build();
+        MessagePublisher publisher = new MessagePublisher(msg);
+        publisher.startConnection();
+        return action + " request sent!";
+    }
+
+    @GetMapping("/getstudents")
+    public String getAllStudents() throws Exception {
+        String action = "Get All Students";
+        MessageFilter msg = MessageFilter.builder().action(action).object(action).build();
+        MessagePublisher publisher = new MessagePublisher(msg);
+        publisher.startConnection();
+        return action + " request sent!";
+    }
+
+    @GetMapping("/course/title/{title}")
+    public String getCourseByName(@PathVariable String title) throws Exception {
+        String action = "Get Course By Title";
+        MessageFilter msg = MessageFilter.builder().action(action).object(title).build();
+        MessagePublisher publisher = new MessagePublisher(msg);
+        publisher.startConnection();
+        return action + " request sent!";
+    }
+
 //
 //    @GetMapping("/student/{name}")
 //    public Student getStudentByName(@PathVariable String name) {
